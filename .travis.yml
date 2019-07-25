@@ -1,0 +1,13 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+  - 7.3
+
+before_script:
+  - yes | pecl install swoole
+  - composer install --working-dir=src --prefer-source --no-interaction
+
+script:
+  - ./src/vendor/bin/phpunit

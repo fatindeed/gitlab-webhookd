@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Custom Standard" xsi:noNamespaceSchemaLocation="phpcs.xsd">
+  <description>A custom coding standard</description>
+  <config name="extensions" value="php"/>
+  <file>./src</file>
+  <exclude-pattern type="relative">^vendor/*</exclude-pattern>
+  <exclude-pattern type="relative">^coroutine-server.php</exclude-pattern>
+  <exclude-pattern type="relative">^http-server.php</exclude-pattern>
+  <arg name="basepath" value="./src"/>
+  <arg name="colors"/>
+  <arg value="np"/>
+  <rule ref="PEAR">
+    <exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag"/>
+    <exclude name="PEAR.Commenting.ClassComment.MissingPackageTag"/>
+    <exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag"/>
+    <exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag"/>
+    <exclude name="PEAR.Commenting.ClassComment.MissingLinkTag"/>
+    <exclude name="PEAR.Commenting.FileComment.Missing"/>
+    <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
+    <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
+    <exclude name="PEAR.Commenting.FileComment.MissingAuthorTag"/>
+    <exclude name="PEAR.Commenting.FileComment.MissingLicenseTag"/>
+    <exclude name="PEAR.Commenting.FileComment.MissingLinkTag"/>
+    <!-- Conflict with PSR2.Methods.MethodDeclaration.Underscore -->
+    <exclude name="PEAR.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
+  </rule>
+  <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+  <rule ref="PSR2.Namespaces.UseDeclaration"/>
+  <rule ref="PSR12"/>
+  <!-- <rule ref="Squiz"/> -->
+  <rule ref="Zend">
+    <!-- Same as PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore -->
+    <exclude name="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+  </rule>
+  <rule ref="Generic.Commenting.DocComment.MissingShort">
+    <exclude-pattern>*/tests/*</exclude-pattern>
+  </rule>
+  <rule ref="PEAR.Commenting.ClassComment.Missing">
+    <exclude-pattern>*/tests/*</exclude-pattern>
+  </rule>
+  <rule ref="PEAR.Commenting.FunctionComment.Missing">
+    <exclude-pattern>*/tests/*</exclude-pattern>
+  </rule>
+</ruleset>

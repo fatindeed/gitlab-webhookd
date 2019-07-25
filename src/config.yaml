@@ -1,0 +1,14 @@
+events:
+  - name: demo
+    type: push
+    conditions:
+      # repository.homepage: http://example.com/mike/diaspora
+      ref:
+        - refs/heads/master
+        - refs/heads/develop
+    commands:
+      - ["env"]
+      - ["sleep", "2"]
+      - ["pwd"]
+      - ["sleep", "3"]
+      - ["whoami"]
