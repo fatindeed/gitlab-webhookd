@@ -2,17 +2,17 @@
 
 namespace App\Command;
 
-use Swoole\Http\Server;
-use Psr\Log\LoggerInterface;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Logger\ConsoleLogger;
 use App\Config;
 use App\EventSubject;
 use App\EventObserver;
 use App\Service\Logger;
+use Swoole\Http\Server;
 use App\Service\Webhookd;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Logger\ConsoleLogger;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Webhookd command

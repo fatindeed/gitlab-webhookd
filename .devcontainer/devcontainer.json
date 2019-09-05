@@ -1,18 +1,23 @@
 // See https://aka.ms/vscode-remote/containers for the
 // documentation about the devcontainer.json format
 {
+    // [Optional] Your project name here
     "name": "gitlab-webhookd",
+
+    // The order of the files is important since later files override previous ones
     "dockerComposeFile": [
         "docker-compose.yml"
     ],
-    "service": "vscode-remote",
+
+    "service": "php",
     "workspaceFolder": "/workspace",
+    "shutdownAction": "stopCompose",
+
     "extensions": [
-        "felixfbecker.php-intellisense",
-        "felixfbecker.php-debug"
+        "felixfbecker.php-debug",
+        "felixfbecker.php-intellisense"
     ],
     "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash",
         "files.watcherExclude": {
             "**/.git/objects/**": true,
             "**/.git/subtree-cache/**": true,
@@ -20,8 +25,7 @@
             "**/tmp/**": true
         }
     },
-    "shutdownAction": "stopCompose",
-    "postCreateCommand": [
-        "vscode-remote-init"
-    ]
+
+    // [Optional] If you are using SSH keys w/Git, copy them and set correct permissions
+    "postCreateCommand": "bash .devcontainer/init.sh"
 }

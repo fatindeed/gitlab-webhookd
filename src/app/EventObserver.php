@@ -61,8 +61,6 @@ class EventObserver implements SplObserver
      * @param \App\EventSubject $subject Event subject
      *
      * @return void
-     *
-     * @throws \App\EventException
      */
     private function handleEvent(EventSubject $subject): void
     {

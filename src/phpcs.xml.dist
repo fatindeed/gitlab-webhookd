@@ -3,11 +3,11 @@
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Custom Standard" xsi:noNamespaceSchemaLocation="phpcs.xsd">
   <description>A custom coding standard</description>
   <config name="extensions" value="php"/>
-  <file>./src</file>
+  <file>.</file>
   <exclude-pattern type="relative">^vendor/*</exclude-pattern>
   <exclude-pattern type="relative">^coroutine-server.php</exclude-pattern>
   <exclude-pattern type="relative">^http-server.php</exclude-pattern>
-  <arg name="basepath" value="./src"/>
+  <arg name="basepath" value="."/>
   <arg name="colors"/>
   <arg value="np"/>
   <rule ref="PEAR">

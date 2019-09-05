@@ -3,10 +3,10 @@
 namespace App\Service;
 
 use Swoole\Server;
+use App\EventSubject;
 use Swoole\Http\Request;
 use Swoole\Http\Response;
 use Psr\Log\LoggerInterface;
-use App\EventSubject;
 
 /**
  * Webhookd class

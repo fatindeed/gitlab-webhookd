@@ -1,6 +1,6 @@
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
@@ -17,25 +17,17 @@
         {
             "label": "Run tests for workspace",
             "type": "shell",
-            "command": "./src/vendor/bin/phpunit",
+            "command": "composer",
             "args": [
-                "--coverage-html",
-                "tmp"
+                "test"
             ],
+            "options": {
+                "cwd": "${workspaceRoot}/src"
+            },
             "group": {
                 "kind": "test",
                 "isDefault": true
             }
-        },
-        {
-            "label": "Check coding standard for workspace",
-            "type": "shell",
-            "command": "phpcs"
-        },
-        {
-            "label": "Run code beautifier and fixer for workspace",
-            "type": "shell",
-            "command": "phpcbf"
         }
     ]
 }

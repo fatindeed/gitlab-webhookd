@@ -2,13 +2,13 @@
 
 namespace App\Tests\Command;
 
-use Symfony\Component\Console\Tester\CommandTester;
-use PHPUnit\Framework\TestCase;
-use App\Command\WebhookdCommand;
 use App\Config;
 use App\EventSubject;
-use App\Service\Webhookd;
 use App\Service\Logger;
+use App\Service\Webhookd;
+use PHPUnit\Framework\TestCase;
+use App\Command\WebhookdCommand;
+use Symfony\Component\Console\Tester\CommandTester;
 
 final class WebhookdCommandTest extends TestCase
 {

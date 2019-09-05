@@ -3,10 +3,10 @@
 namespace App\Tests;
 
 use Exception;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use App\EventSubject;
 use App\EventObserver;
+use Psr\Log\LoggerInterface;
+use PHPUnit\Framework\TestCase;
 
 final class EventSubjectTest extends TestCase
 {
@@ -16,7 +16,7 @@ final class EventSubjectTest extends TestCase
     private $_subject;
 
     /**
-     * @var \Psr\Log\LoggerInterface
+     * @var \Psr\Log\LoggerInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     private $_logger;
 

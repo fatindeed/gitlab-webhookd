@@ -9,10 +9,11 @@ build:
     coverage:
       tests:
         override:
-          - command: ./src/vendor/bin/phpunit --coverage-clover clover.xml
+          - command: ./vendor/bin/phpunit --coverage-clover clover.xml
             coverage:
               file: clover.xml
               format: clover
+  root_path: './src/'
   environment:
     php:
       version: 7.3
@@ -20,8 +21,7 @@ build:
         - swoole
   dependencies:
     override:
-      # - yes | pecl install swoole
-      - composer install --working-dir=src --prefer-source --no-interaction
+      - composer install --prefer-source --no-interaction
 filter:
   paths:
     - src/

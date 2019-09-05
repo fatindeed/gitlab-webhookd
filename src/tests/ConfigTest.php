@@ -2,9 +2,9 @@
 
 namespace App\Tests;
 
+use App\Config;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use App\Config;
 
 final class ConfigTest extends TestCase
 {

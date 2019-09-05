@@ -2,9 +2,9 @@
 
 namespace App\Tests\Service;
 
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use App\Service\Logger;
+use Psr\Log\LoggerInterface;
+use PHPUnit\Framework\TestCase;
 
 final class LoggerTest extends TestCase
 {

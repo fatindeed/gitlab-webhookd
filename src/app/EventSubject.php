@@ -2,10 +2,10 @@
 
 namespace App;
 
-use ArrayObject;
-use SplObjectStorage;
 use SplSubject;
 use SplObserver;
+use ArrayObject;
+use SplObjectStorage;
 use Psr\Log\LoggerInterface;
 
 /**

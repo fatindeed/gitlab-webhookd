@@ -3,12 +3,13 @@
 namespace App\Tests\Service;
 
 use Swoole\Server;
+use ReflectionClass;
+use App\EventSubject;
 use Swoole\Http\Request;
 use Swoole\Http\Response;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
-use App\EventSubject;
 use App\Service\Webhookd;
+use Psr\Log\LoggerInterface;
+use PHPUnit\Framework\TestCase;
 
 final class WebhookdTest extends TestCase
 {
@@ -18,7 +19,7 @@ final class WebhookdTest extends TestCase
     private $_webhookd;
 
     /**
-     * @var \Psr\Log\LoggerInterface
+     * @var \Psr\Log\LoggerInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     private $_logger;
 
@@ -44,9 +45,12 @@ final class WebhookdTest extends TestCase
     {
         // Arrange
         $server = $this->createMock(Server::class);
-        $server->ports = [
-            (object) ['host' => '0.0.0.0','port' => 9501]
-        ];
+        $reflectionServer = new ReflectionClass($server);
+        $property = $reflectionServer->getProperty('ports');
+        $property->setValue(
+            $server,
+            [(object) ['host' => '0.0.0.0','port' => 9501]]
+        );
         // Assert
         $this->_logger->expects($this->once())->method('warning');
         // Act

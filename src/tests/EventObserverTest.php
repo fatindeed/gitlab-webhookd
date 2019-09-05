@@ -2,10 +2,10 @@
 
 namespace App\Tests;
 
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use App\EventSubject;
 use App\EventObserver;
+use Psr\Log\LoggerInterface;
+use PHPUnit\Framework\TestCase;
 
 final class EventObserverTest extends TestCase
 {
